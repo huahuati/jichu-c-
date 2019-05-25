@@ -56,7 +56,7 @@ int main(){
 				}
 
 				char *point = NULL;
-				point = (char *)malloc(sizeof(char));    100 个位置
+				point = (char *)malloc(sizeof(char)*100);    100 个位置
 				if(point 1= NULL){
 					strcpy_s(point,100,"hello world");   100是限定字符串的长度
 					cout << point << endl;
