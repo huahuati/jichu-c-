@@ -118,7 +118,7 @@ int main(){
 			结论：对于指正的初始化，和以往用到的指针有关的NULL的场合，能用nullptr的全部都用nullptr进行取代
 		}
 		额外补充知识
-		(1) 配对使用有malloc成功必然有free，有nwe成功必然有delete。
+		(1) 配对使用有malloc成功必然有free，有new成功必然有delete。
 		(2) free/delete,不要重复调用
 
 		(3)malloc/free 和new/delete区别;	
