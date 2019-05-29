@@ -91,17 +91,17 @@
 
 	基类中的访问权限							子类继承基类的继承方式					子类得到的访问权限
 
-		public  								public 									public 
-		protected 								public 									protected 
-		private 								public 									子类无权访问
+	public  								public 									public 
+	protected 								public 									protected 
+	private 								public 									子类无权访问
 
-		public 									protected 								protected 
-		protected 								protected 								protected 
-		private 								protected 								子类无权访问
+	public 									protected 								protected 
+	protected 								protected 								protected 
+	private 								protected 								子类无权访问
 
-		public 									private 								private 
-		protected 								private 								private 
-		private 								private 								子类无权访问
+	public 									private 								private 
+	protected 								private 								private 
+	private 								private 								子类无权访问
 
 		总结： 
 		(1)子类public继承父类不改变父类的访问权限
