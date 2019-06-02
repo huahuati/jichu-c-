@@ -77,7 +77,7 @@
 		Men men;
 		Human *phuman = &men;   可以
 		Men *pmen = phuman      不可以，编译器通过静态类型推断转换合法性。发现基类不能转成派生类
-		如果基类有虚函数的话，可以通过 dynamic_cast 可以转换
+		如果基类有虚函数的话，可以通过  dynamic_cast 可以转换
 
 		Men *pmen = dynamic_cast<Men *>(phuman);
 
