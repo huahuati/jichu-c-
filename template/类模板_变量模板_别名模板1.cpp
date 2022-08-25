@@ -4,16 +4,16 @@ using namespace std;
 
 namespace _nmspl {
 
-	//ÀàÄ£°å¶¨Òå
-	template<typename T>   //T ÊÇÀàÐÍÄ£°å²ÎÊý,±íÊ¾myvectorÕâ¸öÈÝÆ÷Ëù±£´æµÄÔªËØÀàÐÍ
-	class myvector        //myvector¿ÉÒÔ³ÆÎªÀàÃû»òÕßÀàÄ£°å£¬myvector<T>¿ÉÒÔ³ÆÎªÀàÐÍÃû£¨myvectorºóÃæ´øÀ´¼âÀ¨ºÅ£¬±íÊ¾µÄ¾ÍÊÇÒ»¸ö¾ßÌåÀàÐÍÁË£©
+	//ç±»æ¨¡æ¿å®šä¹‰
+	template<typename T>   //T æ˜¯ç±»åž‹æ¨¡æ¿å‚æ•°,è¡¨ç¤ºmyvectorè¿™ä¸ªå®¹å™¨æ‰€ä¿å­˜çš„å…ƒç´ ç±»åž‹
+	class myvector        //myvectorå¯ä»¥ç§°ä¸ºç±»åæˆ–è€…ç±»æ¨¡æ¿ï¼Œmyvector<T>å¯ä»¥ç§°ä¸ºç±»åž‹åï¼ˆmyvectoråŽé¢å¸¦æ¥å°–æ‹¬å·ï¼Œè¡¨ç¤ºçš„å°±æ˜¯ä¸€ä¸ªå…·ä½“ç±»åž‹äº†ï¼‰
 	{
 	public:
-		typedef T* myiterator;   //µü´úÆ÷
+		typedef T* myiterator;   //è¿­ä»£å™¨
 	public:
-		myvector();   //¹¹Ôìº¯Êý
-		myvector& operator=(const myvector&);  //¸³ÖµÔËËã·ûÖØÔØ
-		//myvector<int>& operator=(const myvector&);  //¸³ÖµÔËËã·ûÖØÔØ  ,Í¬ÉÏ
+		myvector();   //æž„é€ å‡½æ•°
+		myvector& operator=(const myvector&);  //èµ‹å€¼è¿ç®—ç¬¦é‡è½½
+		//myvector<int>& operator=(const myvector&);  //èµ‹å€¼è¿ç®—ç¬¦é‡è½½  ,åŒä¸Š
 		myvector( T tmpt)
 		{
 			
@@ -21,23 +21,23 @@ namespace _nmspl {
 	public:
 		void myfunc()
 		{
-			cout << "myfunc()±»µ÷ÓÃ" << endl;
+			cout << "myfunc()è¢«è°ƒç”¨" << endl;
 		}
 
 
 		static void mystaticfunc()
 		{
-			cout << "mystaticfunc()±»µ÷ÓÃ" << endl;
+			cout << "mystaticfunc()è¢«è°ƒç”¨" << endl;
 		}
 	public:
-		myiterator mybegin(); //µü´úÆ÷ÆðÊ¼Î»ÖÃ
-		myiterator myend();   //µü´úÆ÷½áÊøÎ»ÖÃ
+		myiterator mybegin(); //è¿­ä»£å™¨èµ·å§‹ä½ç½®
+		myiterator myend();   //è¿­ä»£å™¨ç»“æŸä½ç½®
 	};
 	
 
-	//ÀàÄ£°åÊµÏÖ
+	//ç±»æ¨¡æ¿å®žçŽ°
 	template<typename T>
-	myvector<T>::myvector()   //ÀàÍâ¹¹Ôìº¯ÊýµÄÊµÏÖ
+	myvector<T>::myvector()   //ç±»å¤–æž„é€ å‡½æ•°çš„å®žçŽ°
 	{
 		
 	}
@@ -51,16 +51,16 @@ namespace _nmsp2
 	{
 		A(T val1, T val2)
 		{
-			cout << "A::A(T val1, T val2)Ö´ÐÐÁË!" << endl;
+			cout << "A::A(T val1, T val2)æ‰§è¡Œäº†!" << endl;
 		}
 
 		A(T val1)
 		{
-			cout << "A::A(T val1)Ö´ÐÐÁË!" << endl;
+			cout << "A::A(T val1)æ‰§è¡Œäº†!" << endl;
 		}
 	};
 	
-	template<typename T>  //×Ô¶¨ÒåÍÆ¶ÏÖ¸ÄÏ
+	template<typename T>  //è‡ªå®šä¹‰æŽ¨æ–­æŒ‡å—
 	A(T)->A<T>;
 
 }
@@ -72,7 +72,7 @@ namespace _nmsp3 {
 		T m_b;
 	};
 
-	template<typename T>   //×Ô¶¨ÒåÍÆ¶ÏÖ¸ÄÏ
+	template<typename T>   //è‡ªå®šä¹‰æŽ¨æ–­æŒ‡å—
 	B(T)->B<T>;
 }
 namespace _nmsp4 {
@@ -83,63 +83,63 @@ namespace _nmsp4 {
 		T m_b1;
 	};
 
-	template<typename T>   //×Ô¶¨ÒåÍÆ¶ÏÖ¸ÄÏ
+	template<typename T>   //è‡ªå®šä¹‰æŽ¨æ–­æŒ‡å—
 	B(T,T)->B<T>;
 }
 int main()
 {
-	//Ò»£ºÀàÐÍÄ£°åµÄ»ù±¾¹æ·¶ºÍÄ£°å²ÎÊýµÄÍÆ¶Ï
-		//ÀàÄ£°å£ºÊÇ²úÉúÀàµÄÄ£¾ß£¬Í¨¹ý¸ø¶¨µÄÄ£°å²ÎÊý£¬Éú³É¾ßÌåµÄÀà£¬Ò²¾ÍÊÇÊµÀý»¯Ò»¸öÌØ¶¨µÄÀà
-		//vecotr<int>,ÒýÈëÀàÄ£°åµÄÄ¿µÄ£¬¼õÉÙ´úÂëÈßÓà
-		//(1.1)»ù±¾·¶Àý
-			//myvector¿ÉÒÔ³ÆÎªÀàÃû»òÕßÀàÄ£°å£¬myvector<T>¿ÉÒÔ³ÆÎªÀàÐÍÃû£¨myvectorºóÃæ´øÀ´¼âÀ¨ºÅ£¬±íÊ¾µÄ¾ÍÊÇÒ»¸ö¾ßÌåÀàÐÍÁË£©
-			//ÀàÄ£°åÖÐ£¬Ö»ÓÐ±»µ÷ÓÃµÄ³ÉÔ±º¯Êý£¬±àÒëÆ÷²Å»á²úÉú³öÕâÐ©º¯ÊýµÄÊµÀý»¯´úÂë(¾²Ì¬º¯ÊýÒ²ÊÇ)
+	//ä¸€ï¼šç±»åž‹æ¨¡æ¿çš„åŸºæœ¬è§„èŒƒå’Œæ¨¡æ¿å‚æ•°çš„æŽ¨æ–­
+		//ç±»æ¨¡æ¿ï¼šæ˜¯äº§ç”Ÿç±»çš„æ¨¡å…·ï¼Œé€šè¿‡ç»™å®šçš„æ¨¡æ¿å‚æ•°ï¼Œç”Ÿæˆå…·ä½“çš„ç±»ï¼Œä¹Ÿå°±æ˜¯å®žä¾‹åŒ–ä¸€ä¸ªç‰¹å®šçš„ç±»
+		//vecotr<int>,å¼•å…¥ç±»æ¨¡æ¿çš„ç›®çš„ï¼Œå‡å°‘ä»£ç å†—ä½™
+		//(1.1)åŸºæœ¬èŒƒä¾‹
+			//myvectorå¯ä»¥ç§°ä¸ºç±»åæˆ–è€…ç±»æ¨¡æ¿ï¼Œmyvector<T>å¯ä»¥ç§°ä¸ºç±»åž‹åï¼ˆmyvectoråŽé¢å¸¦æ¥å°–æ‹¬å·ï¼Œè¡¨ç¤ºçš„å°±æ˜¯ä¸€ä¸ªå…·ä½“ç±»åž‹äº†ï¼‰
+			//ç±»æ¨¡æ¿ä¸­ï¼Œåªæœ‰è¢«è°ƒç”¨çš„æˆå‘˜å‡½æ•°ï¼Œç¼–è¯‘å™¨æ‰ä¼šäº§ç”Ÿå‡ºè¿™äº›å‡½æ•°çš„å®žä¾‹åŒ–ä»£ç (é™æ€å‡½æ•°ä¹Ÿæ˜¯)
 
-	_nmspl::myvector<int> tmpvec;        //T±»Ìæ»»³Éint
-	tmpvec.myfunc();					  //µ÷ÓÃÆÕÍ¨³ÉÔ±º¯Êý
+	_nmspl::myvector<int> tmpvec;        //Tè¢«æ›¿æ¢æˆint
+	tmpvec.myfunc();					  //è°ƒç”¨æ™®é€šæˆå‘˜å‡½æ•°
 	_nmspl::myvector<string>::mystaticfunc();
 
-		//(1.2) Ä£°å²ÎÊýµÄÍÆ¶Ï
-			//c++17ÖÐ£¬ÀàÄ£°åµÄÀàÐÍÄ£°å²ÎÊýÒ²ÄÜÍÆ¶ÏÁË¡£
+		//(1.2) æ¨¡æ¿å‚æ•°çš„æŽ¨æ–­
+			//c++17ä¸­ï¼Œç±»æ¨¡æ¿çš„ç±»åž‹æ¨¡æ¿å‚æ•°ä¹Ÿèƒ½æŽ¨æ–­äº†ã€‚
 			
-	_nmspl::myvector tmpvec2(12);    //ÎÞÐèÖ¸¶¨Ä£°å²ÎÊýÁË
-	//_nmspl::myvector<int> tmpvec2(12);   //Í¬ÉÏ
+	_nmspl::myvector tmpvec2(12);    //æ— éœ€æŒ‡å®šæ¨¡æ¿å‚æ•°äº†
+	//_nmspl::myvector<int> tmpvec2(12);   //åŒä¸Š
 	tmpvec2.myfunc();
 
-		//(1.3)ÍÆ¶ÏÖ¸ÄÏ£¨deduction guide)¸ÅÒªÁË½â
-			//c++17ÐÂ¸ÅÄî£ºÖ÷ÒªÓÃÀ´ÔÚÍÆ¶ÏÀàÄ£°å²ÎÊýÊ±Ìá¹©ÍÆ¶ÏÖ¸Òý
-			//(1.3.1)ÒþÊ½µÄÍÆ¶ÏÖ¸ÄÏ
-					//Õë¶ÔÀàÄ£°åAµÄÃ¿¸ö¹¹Ôìº¯Êý£¬¶¼ÓÐÒ»¸öÒþÊ½µÄÄ£°å²ÎÊýÍÆ¶Ï»úÖÆ´æÔÚ£¬Õâ¸ö»úÖÆ£¬±»³ÆÎªÒþÊ½µÄÍÆ¶ÏÖ¸ÄÏ
+		//(1.3)æŽ¨æ–­æŒ‡å—ï¼ˆdeduction guide)æ¦‚è¦äº†è§£
+			//c++17æ–°æ¦‚å¿µï¼šä¸»è¦ç”¨æ¥åœ¨æŽ¨æ–­ç±»æ¨¡æ¿å‚æ•°æ—¶æä¾›æŽ¨æ–­æŒ‡å¼•
+			//(1.3.1)éšå¼çš„æŽ¨æ–­æŒ‡å—
+					//é’ˆå¯¹ç±»æ¨¡æ¿Açš„æ¯ä¸ªæž„é€ å‡½æ•°ï¼Œéƒ½æœ‰ä¸€ä¸ªéšå¼çš„æ¨¡æ¿å‚æ•°æŽ¨æ–­æœºåˆ¶å­˜åœ¨ï¼Œè¿™ä¸ªæœºåˆ¶ï¼Œè¢«ç§°ä¸ºéšå¼çš„æŽ¨æ–­æŒ‡å—
 					//typename<typename T>
 					// A(T,T)->A<T>;
-					// ±í´ï³öÏÖ -> ×ó²à²¿·ÖÄÚÈÝ»òÕßÐÎÊ½Ê±£¬ÇëÍÆ¶Ï³É -> ÓÒ²àµÄÀàÐÍ£¬ÓÒ²àÀàÐÍÒ²±»³ÆÎª¡°Ö¸ÄÏÀàÐÍ¡±
-					// -> ×ó²à²¿·Ö£º¸ÃÍÆ¶ÏÖ¸ÄÏËù¶ÔÓ¦µÄ¹¹Ôìº¯Êý(×¢Òâ¹¹Ôìº¯Êý£¬Ö»ÓÐÓÐ¹¹Ôìº¯Êý²Å¿ÉÒÔ)µÄº¯ÊýÉùÃ÷£¬¶à¸ö²ÎÊýÖ®¼äÓÃ¡°£¬¡±·Ö¸ô
-					// -> ÓÒ²à²¿·Ö£º ÀàÄ£°åÃû£¬½Ó×ÅÒ»¸ö¼âÀ¨ºÅ£¬¼âÀ¨ºÅÖÐÊÇÄ£°å²ÎÊýÃû¡£
-					// Õû¸öÍÆ¶ÏÖ¸ÄÏµÄº¬Òå£ºµ±ÓÃµ÷ÓÃ´øÁ½¸ö²ÎÊýµÄ¹¹Ôìº¯ÊýÍ¨¹ýÀàÄ£°åA´´½¨Ïà¹Ø¶ÔÏóÊ±£¬ÇëÓÃËùÌá¹©µÄ¹¹Ôìº¯ÊýµÄÊµ²ÎÀ´ÍÆ¶ÏÀàÄ£°åAµÄÄ£°å²ÎÊýÀàÐÍ
-				//Ò»¾ä»°£ºÍÆ¶ÏÖ¸ÄÏµÄ´æÔÚÒâÒå¾ÍÊÇÈÃ±àÒëÆ÷ ÄÜ¹»°ÑÄ£°å²ÎÊýµÄÀàÐÍÍÆ¶Ï³öÀ´
-				//¼ÙÉè
+					// è¡¨è¾¾å‡ºçŽ° -> å·¦ä¾§éƒ¨åˆ†å†…å®¹æˆ–è€…å½¢å¼æ—¶ï¼Œè¯·æŽ¨æ–­æˆ -> å³ä¾§çš„ç±»åž‹ï¼Œå³ä¾§ç±»åž‹ä¹Ÿè¢«ç§°ä¸ºâ€œæŒ‡å—ç±»åž‹â€
+					// -> å·¦ä¾§éƒ¨åˆ†ï¼šè¯¥æŽ¨æ–­æŒ‡å—æ‰€å¯¹åº”çš„æž„é€ å‡½æ•°(æ³¨æ„æž„é€ å‡½æ•°ï¼Œåªæœ‰æœ‰æž„é€ å‡½æ•°æ‰å¯ä»¥)çš„å‡½æ•°å£°æ˜Žï¼Œå¤šä¸ªå‚æ•°ä¹‹é—´ç”¨â€œï¼Œâ€åˆ†éš”
+					// -> å³ä¾§éƒ¨åˆ†ï¼š ç±»æ¨¡æ¿åï¼ŒæŽ¥ç€ä¸€ä¸ªå°–æ‹¬å·ï¼Œå°–æ‹¬å·ä¸­æ˜¯æ¨¡æ¿å‚æ•°åã€‚
+					// æ•´ä¸ªæŽ¨æ–­æŒ‡å—çš„å«ä¹‰ï¼šå½“ç”¨è°ƒç”¨å¸¦ä¸¤ä¸ªå‚æ•°çš„æž„é€ å‡½æ•°é€šè¿‡ç±»æ¨¡æ¿Aåˆ›å»ºç›¸å…³å¯¹è±¡æ—¶ï¼Œè¯·ç”¨æ‰€æä¾›çš„æž„é€ å‡½æ•°çš„å®žå‚æ¥æŽ¨æ–­ç±»æ¨¡æ¿Açš„æ¨¡æ¿å‚æ•°ç±»åž‹
+				//ä¸€å¥è¯ï¼šæŽ¨æ–­æŒ‡å—çš„å­˜åœ¨æ„ä¹‰å°±æ˜¯è®©ç¼–è¯‘å™¨ èƒ½å¤ŸæŠŠæ¨¡æ¿å‚æ•°çš„ç±»åž‹æŽ¨æ–­å‡ºæ¥
+				//å‡è®¾
 					//template<typename T>
 					//A(T,T) -> A<double>;
-					//ÄÇÃ´ A obj1(15,16);  ´úÂëÐÐ   Ïàµ±ÓÚA<double> aobj1(15,16);
+					//é‚£ä¹ˆ A obj1(15,16);  ä»£ç è¡Œ   ç›¸å½“äºŽA<int> aobj1(15,16);
 			
-			//(1.3.2) ×Ô¶¨ÒåµÄÍÆ¶ÏÖ¸ÄÏ
-				//_nmsp3::B bobj3{15};   ²»±¨´íµÄÔ­Òò
-					//a)ÀàBÊÇ¾ÛºÏÀà£¬ÊÇ¿ÉÒÔÍ¨¹ý{}³õÊ¼»¯µÄ
-					//b)B bobj3{15}  ÕâÖÖÐÎÊ½ÕýºÃ¾ÍÏàµ±ÓÚµ÷ÓÃÁËÀàÄ£°åBµÄ´øÒ»¸ö²ÎÊý{15}µÄ¹¹Ôìº¯Êý£¬¾¡¹ÜÀàÄ£°åBÖÐ²»´æÔÚ¹¹Ôìº¯Êý
-					//c)ÒòÎª 	template<typename T> B(T)->B<T>;ÍÆ¶ÏÖ¸ÄÏµÄ´æÔÚ£¬µ±µ÷ÓÃÁËÓÃÀàÄ£°åB´øÒ»¸ö²ÎÊýµÄ¹¹Ôìº¯ÊýÊ±£¬ÍÆ¶Ï³öÀ´µÄÀàÐÍÎªB<T>
-								//ËùÒÔ£¬×î×ÜÍÆ¶Ï³öÀ´µÄÀàÐÍÎªB<int>ÀàÐÍ¡£
+			//(1.3.2) è‡ªå®šä¹‰çš„æŽ¨æ–­æŒ‡å—
+				//_nmsp3::B bobj3{15};   ä¸æŠ¥é”™çš„åŽŸå› 
+					//a)ç±»Bæ˜¯èšåˆç±»ï¼Œæ˜¯å¯ä»¥é€šè¿‡{}åˆå§‹åŒ–çš„
+					//b)B bobj3{15}  è¿™ç§å½¢å¼æ­£å¥½å°±ç›¸å½“äºŽè°ƒç”¨äº†ç±»æ¨¡æ¿Bçš„å¸¦ä¸€ä¸ªå‚æ•°{15}çš„æž„é€ å‡½æ•°ï¼Œå°½ç®¡ç±»æ¨¡æ¿Bä¸­ä¸å­˜åœ¨æž„é€ å‡½æ•°
+					//c)å› ä¸º 	template<typename T> B(T)->B<T>;æŽ¨æ–­æŒ‡å—çš„å­˜åœ¨ï¼Œå½“è°ƒç”¨äº†ç”¨ç±»æ¨¡æ¿Bå¸¦ä¸€ä¸ªå‚æ•°çš„æž„é€ å‡½æ•°æ—¶ï¼ŒæŽ¨æ–­å‡ºæ¥çš„ç±»åž‹ä¸ºB<T>
+								//æ‰€ä»¥ï¼Œæœ€æ€»æŽ¨æ–­å‡ºæ¥çš„ç±»åž‹ä¸ºB<int>ç±»åž‹ã€‚
 	//(1.3.1)		
-	_nmsp2::A aobj1(5, 1);  //×Ô¶¯ÊµÀý»¯³ö A<int>
+	_nmsp2::A aobj1(5, 1);  //è‡ªåŠ¨å®žä¾‹åŒ–å‡º A<int>
 
 	_nmsp2::A aobj2(12.8);
 
-	//_nmsp2::A* aobj3 = NULL;   //ÕâÑù²»ÄÜÍÆ¶Ï
+	//_nmsp2::A* aobj3 = NULL;   //è¿™æ ·ä¸èƒ½æŽ¨æ–­
 
 	//(1.3.2)
-	_nmsp3::B<int> bobj1;			 //ÐèÒªÃ÷È·Ö¸¶¨Ä£°å²ÎÊýÀàÐÍ
-	_nmsp3::B<int> bobj2{ 15 };	 //¿ÉÒÔÓÃ³õÊ¼»¯ÁÐ±íµÄ·½Ê½À´¶¨Òå¶ÔÏóbobj2,³ÉÔ±±äÁ¿m_b = 15;
+	_nmsp3::B<int> bobj1;			 //éœ€è¦æ˜Žç¡®æŒ‡å®šæ¨¡æ¿å‚æ•°ç±»åž‹
+	_nmsp3::B<int> bobj2{ 15 };	 //å¯ä»¥ç”¨åˆå§‹åŒ–åˆ—è¡¨çš„æ–¹å¼æ¥å®šä¹‰å¯¹è±¡bobj2,æˆå‘˜å˜é‡m_b = 15;
 
-	_nmsp3::B bobj3{15};     //ÒòÎª×Ô¶¨ÒåÁËÍÆ¶ÏÖ¸ÄÏ£¬ËùÒÔ²»ÓÃÃ÷È·Ö¸¶¨Ä£°å²ÎÊýÀàÐÍ
+	_nmsp3::B bobj3{15};     //å› ä¸ºè‡ªå®šä¹‰äº†æŽ¨æ–­æŒ‡å—ï¼Œæ‰€ä»¥ä¸ç”¨æ˜Žç¡®æŒ‡å®šæ¨¡æ¿å‚æ•°ç±»åž‹
 	
 	_nmsp4::B bobj4{ 15,16 };
 	return 0;
